@@ -10,6 +10,9 @@ A demo Flutter application for Firebase Cloud Messaging
 run this cmnd in cmd -->
 keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 )
+or check this answer for easier way to get SH1 :
+https://stackoverflow.com/a/54342861/12030116
+
 3) In android/app -> add google-service.json
 4)In pubspec.yaml
 add,
