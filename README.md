@@ -55,7 +55,7 @@ A demo Flutter application for Firebase Cloud Messaging
 6. In src/main/manifest
    add,
    1 -->  
-   ```<application
+    ```<application
         android:name=".Application"
     ```
 
