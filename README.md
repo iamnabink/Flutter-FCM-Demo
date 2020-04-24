@@ -9,7 +9,7 @@ A demo Flutter application for Firebase Cloud Messaging
 ...To get sh1 key go to java/jdk/bin & run this cmnd in cmd:
 ... `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
-[or check this answer for easier way to get SH1] https://stackoverflow.com/a/54342861/12030116
+[or check this answer for easier way to get SH1](https://stackoverflow.com/a/54342861/12030116)
 
 3. In android/app -> add google-service.json
 4. In `pubspec.yaml`
@@ -94,4 +94,4 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 11. run the application
 12. enjoy.
 
-[For more help read documentation] https://pub.dev/packages/firebase_messaging
+[For more help read documentation](https://pub.dev/packages/firebase_messaging)
