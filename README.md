@@ -9,11 +9,13 @@ A demo Flutter application for Firebase Cloud Messaging
 
    To get sh1 key go to java/jdk/bin & run this cmnd in cmd:
    
-   `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
-)
-   or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
+   `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey             storepass android -keypass android`
 
-3. In android/app -> add google-service.json
+   or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1      Key
+
+3. In android/app -> 
+   add 
+   `google-service.json`
 4. In `pubspec.yaml`
 
    add,
@@ -51,6 +53,7 @@ A demo Flutter application for Firebase Cloud Messaging
    ```
 
    if error -> replace
+   
     ```override fun registerWith(registry: PluginRegistry?) {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
     }```
@@ -75,6 +78,7 @@ A demo Flutter application for Firebase Cloud Messaging
 7. In `app/build.gradle`
 
    add,
+   
     `implementation 'com.google.firebase:firebase-messaging:20.1.5'`
      `apply plugin: 'com.google.gms.google-services'` addd this at the bottom 
 
