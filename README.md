@@ -8,12 +8,14 @@ A demo Flutter application for Firebase Cloud Messaging
 2. Create project in firebase console.
 
    To get sh1 key go to java/jdk/bin & run this cmnd in cmd:
+   
    `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
    or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
 
 3. In android/app -> add google-service.json
 4. In `pubspec.yaml`
+
    add,
    ```dev_dependencies:
       flutter_test:
@@ -55,6 +57,7 @@ A demo Flutter application for Firebase Cloud Messaging
 6. In src/main/manifest.
 
    add,
+   
    1 -->  
     ```<application
         android:name=".Application"
@@ -70,19 +73,21 @@ A demo Flutter application for Firebase Cloud Messaging
      ```
 
 7. In `app/build.gradle`
+
    add,
     `implementation 'com.google.firebase:firebase-messaging:20.1.5'`
      `apply plugin: 'com.google.gms.google-services'` addd this at the bottom 
 
 8. In `android/build.gradle`
+
    add,
     ```dependencies {
         classpath 'com.google.gms:google-services:4.3.3'
      ```
 
 9. To get token and suscribe to a topic use following code in your `main.dart`:
-   `main.dart`
 
+   `main.dart`
    ```
    import 'package:firebase_messaging/firebase_messaging.dart';
     final FirebaseMessaging _messaging = FirebaseMessaging();
