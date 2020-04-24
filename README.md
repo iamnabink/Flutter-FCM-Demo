@@ -4,29 +4,30 @@ A demo Flutter application for Firebase Cloud Messaging
 
 ## Steps to integrate FCM in flutter in (2020)
 
-1) create flutter project
-2) create project in firebase console
-(to get sh1 key go to java/jdk/bin & 
-run this cmnd in cmd -->
-keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+1. create flutter project
+2. create project in firebase console
+...to get sh1 key go to java/jdk/bin & 
+...run this cmnd in cmd -->
+... `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
-or check this answer for easier way to get SH1 :
-https://stackoverflow.com/a/54342861/12030116
+[or check this answer for easier way to get SH1] https://stackoverflow.com/a/54342861/12030116
 
-3) In android/app -> add google-service.json
-4)In pubspec.yaml
-add,
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  firebase_messaging: ^6.0.13
-  firebase_analytics: ^5.0.11
+3. In android/app -> add google-service.json
+4. In `pubspec.yaml`
+..add,
+```dev_dependencies:
+   flutter_test:
+     sdk: flutter
+   firebase_messaging: ^6.0.13
+   firebase_analytics: ^5.0.11
+  ```
 
 
-5) add Application.kt in android/app/src/main/kotlin/com/yourdomain/appname/
-Application.kt (ignore the error)
+5. add Application.kt in android/app/src/main/kotlin/com/yourdomain/appname/
 
-import io.flutter.app.FlutterApplication
+`Application.kt (ignore the error)`
+
+```import io.flutter.app.FlutterApplication
 import io.flutter.plugin.common.PluginRegistry
 import io.flutter.plugin.common.PluginRegistry.PluginRegistrantCallback
 import io.flutter.plugins.GeneratedPluginRegistrant
@@ -43,12 +44,12 @@ class Application : FlutterApplication() , PluginRegistrantCallback {
     override fun registerWith( registry: PluginRegistry) {
         GeneratedPluginRegistrant.registerWith(registry);
     }
-}
+}```
 
 if error -> replace
-    override fun registerWith(registry: PluginRegistry?) {
+    `override fun registerWith(registry: PluginRegistry?) {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
-    }
+    }`
 
 
 6) In src/main/manifest
