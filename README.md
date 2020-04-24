@@ -6,11 +6,13 @@ A demo Flutter application for Firebase Cloud Messaging
 
 1. Create flutter project
 2. Create project in firebase console.
+
 ...To get sh1 key go to java/jdk/bin & run this cmnd in cmd:
+
 ... `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
 
-or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
+...or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
 
 3. In android/app -> add google-service.json
 4. In `pubspec.yaml`
