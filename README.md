@@ -14,82 +14,85 @@ A demo Flutter application for Firebase Cloud Messaging
 
 3. In android/app -> add google-service.json
 4. In `pubspec.yaml`
-...add,
-```dev_dependencies:
-   flutter_test:
-     sdk: flutter
-   firebase_messaging: ^6.0.13
-   firebase_analytics: ^5.0.11
-  ```
+   add,
+   ```dev_dependencies:
+      flutter_test:
+        sdk: flutter
+      firebase_messaging: ^6.0.13
+      firebase_analytics: ^5.0.11
+    ```
 
 
 5. add Application.kt in android/app/src/main/kotlin/com/yourdomain/appname/
 
-`Application.kt` (ignore the error)
+   `Application.kt` (ignore the error)
 
-```
-import io.flutter.app.FlutterApplication
-import io.flutter.plugin.common.PluginRegistry
-import io.flutter.plugin.common.PluginRegistry.PluginRegistrantCallback
-import io.flutter.plugins.GeneratedPluginRegistrant
-import io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
-//import com.google.firebase.messaging.FirebaseMessagingService
+   ```
+   import io.flutter.app.FlutterApplication
+   import io.flutter.plugin.common.PluginRegistry
+   import io.flutter.plugin.common.PluginRegistry.PluginRegistrantCallback
+   import io.flutter.plugins.GeneratedPluginRegistrant
+   import io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
+   //import com.google.firebase.messaging.FirebaseMessagingService
 
-class Application : FlutterApplication() , PluginRegistrantCallback {
+   class Application : FlutterApplication() , PluginRegistrantCallback {
 
-    override fun onCreate() {
-        super.onCreate();
-        FlutterFirebaseMessagingService.setPluginRegistrant(this);
-    }
+       override fun onCreate() {
+           super.onCreate();
+           FlutterFirebaseMessagingService.setPluginRegistrant(this);
+       }
 
-    override fun registerWith( registry: PluginRegistry) {
-        GeneratedPluginRegistrant.registerWith(registry);
-    }
-}
-```
+      override fun registerWith( registry: PluginRegistry) {
+           GeneratedPluginRegistrant.registerWith(registry);
+       }
+   }
+   ```
 
-..if error -> replace
+   if error -> replace
     ```override fun registerWith(registry: PluginRegistry?) {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
     }```
 6. In src/main/manifest
-...add,
-  1 -->  <application
-        android:name=".Application"
+   add,
+   1 -->  
+   ```<application
+        android:name=".Application"```
 
-  2-->    
+   2-->    
+     ```
      <activity        
      <intent-filter>
              <action android:name="FLUTTER_NOTIFICATION_CLICK" />
              <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
+     ```
 
 7. In `app/build.gradle`
-...add,
+   add,
     `implementation 'com.google.firebase:firebase-messaging:20.1.5'`
-`apply plugin: 'com.google.gms.google-services'` addd this at the bottom 
+     `apply plugin: 'com.google.gms.google-services'` addd this at the bottom 
 
 8. In `android/build.gradle`
-..add,
+   add,
     ```dependencies {
         classpath 'com.google.gms:google-services:4.3.3'
-        ```
+     ```
 
 9. To get token and suscribe to a topic use following code in your `main.dart`:
-`main.dart`
+   `main.dart`
 
-```
-import 'package:firebase_messaging/firebase_messaging.dart';
- final FirebaseMessaging _messaging = FirebaseMessaging();
-  @override
-  void initState() {
-    super.initState();
-    _messaging.subscribeToTopic("general");
-    _messaging.getToken().then((token) {
-      print(token);
-    });
-  } 
-  ```
+   ```
+   import 'package:firebase_messaging/firebase_messaging.dart';
+    final FirebaseMessaging _messaging = FirebaseMessaging();
+    @override
+     void initState() {
+       super.initState();
+       _messaging.subscribeToTopic("general");
+       _messaging.getToken().then((token) {
+        print(token);
+       });
+      } 
+     ```
 
 10. Invalidate cache and restart android studio
 11. run the application
