@@ -81,6 +81,6 @@ add,
   
 10. Invalidate cache and restart android studio
 11. run the application
-12. enjoy
+12. enjoy.
 
 [For more help read documentation] https://pub.dev/packages/firebase_messaging
