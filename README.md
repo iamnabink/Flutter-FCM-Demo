@@ -52,7 +52,8 @@ A demo Flutter application for Firebase Cloud Messaging
     ```override fun registerWith(registry: PluginRegistry?) {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
     }```
-6. In src/main/manifest
+6. In src/main/manifest.
+
    add,
    1 -->  
     ```<application
