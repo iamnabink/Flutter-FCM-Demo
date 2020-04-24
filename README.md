@@ -6,15 +6,14 @@ A demo Flutter application for Firebase Cloud Messaging
 
 1. create flutter project
 2. create project in firebase console
-...to get sh1 key go to java/jdk/bin & 
-...run this cmnd in cmd -->
+...to get sh1 key go to java/jdk/bin & run this cmnd in cmd -->
 ... `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
 [or check this answer for easier way to get SH1] https://stackoverflow.com/a/54342861/12030116
 
 3. In android/app -> add google-service.json
 4. In `pubspec.yaml`
-..add,
+...add,
 ```dev_dependencies:
    flutter_test:
      sdk: flutter
@@ -27,7 +26,7 @@ A demo Flutter application for Firebase Cloud Messaging
 
 `Application.kt` (ignore the error)
 
-
+```
 import io.flutter.app.FlutterApplication
 import io.flutter.plugin.common.PluginRegistry
 import io.flutter.plugin.common.PluginRegistry.PluginRegistrantCallback
@@ -37,7 +36,7 @@ import io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
 
 class Application : FlutterApplication() , PluginRegistrantCallback {
 
-```    override fun onCreate() {
+    override fun onCreate() {
         super.onCreate();
         FlutterFirebaseMessagingService.setPluginRegistrant(this);
     }
@@ -53,7 +52,7 @@ class Application : FlutterApplication() , PluginRegistrantCallback {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
     }```
 6. In src/main/manifest
-add,
+...add,
   1 -->  <application
         android:name=".Application"
 
@@ -64,21 +63,33 @@ add,
              <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
 
-7.In `app/build.gradle`
-..add,
+7. In `app/build.gradle`
+...add,
     `implementation 'com.google.firebase:firebase-messaging:20.1.5'`
 `apply plugin: 'com.google.gms.google-services'` addd this at the bottom 
 
 8. In `android/build.gradle`
 ..add,
     ```dependencies {
-        classpath 'com.google.gms:google-services:4.3.3'```
+        classpath 'com.google.gms:google-services:4.3.3'
+        ```
 
 9. To get token and suscribe to a topic use following code in your `main.dart`:
-
 `main.dart`
 
-  
+```
+import 'package:firebase_messaging/firebase_messaging.dart';
+ final FirebaseMessaging _messaging = FirebaseMessaging();
+  @override
+  void initState() {
+    super.initState();
+    _messaging.subscribeToTopic("general");
+    _messaging.getToken().then((token) {
+      print(token);
+    });
+  } 
+  ```
+
 10. Invalidate cache and restart android studio
 11. run the application
 12. enjoy.
