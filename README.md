@@ -2,8 +2,11 @@
 
 A demo Flutter application for Firebase Cloud Messaging 
 
-## Steps to integrate FCM in flutter in (2020)
+## Getting Started
 
+Clone this repository locally. The folder structure is somewhat based on clean code architecture
+
+How to implement firebase in you project: 
 1. Create flutter project
 2. Create project in firebase console.
 
