@@ -56,15 +56,16 @@ A demo Flutter application for Firebase Cloud Messaging
    add,
    1 -->  
    ```<application
-        android:name=".Application"```
+        android:name=".Application"
+    ```
 
    2-->    
      ```
-     <activity        
-     <intent-filter>
+      <activity        
+         <intent-filter>
              <action android:name="FLUTTER_NOTIFICATION_CLICK" />
              <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
+          </intent-filter>
      ```
 
 7. In `app/build.gradle`
