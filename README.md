@@ -61,12 +61,12 @@ A demo Flutter application for Firebase Cloud Messaging
 
    add,
    
-   1 -->  
+   In <application/> tag  
     ```<application
         android:name=".Application"
     ```
 
-   2-->    
+   In <activity/> tag (below existing intent filter tag)     
      ```
       <activity        
          <intent-filter>
