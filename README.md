@@ -94,4 +94,4 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 11. run the application
 12. enjoy.
 
-[For more help read documentation](https://pub.dev/packages/firebase_messaging)
+For more help Read official documentation [Here](https://pub.dev/packages/firebase_messaging)
