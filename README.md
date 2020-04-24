@@ -5,7 +5,7 @@ A demo Flutter application for Firebase Cloud Messaging
 ## Steps to integrate FCM in flutter in (2020)
 
 1. create flutter project
-2. create project in firebase console
+2. create project in firebase console.
 ...to get sh1 key go to java/jdk/bin & run this cmnd in cmd -->
 ... `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey storepass android -keypass android`
 )
