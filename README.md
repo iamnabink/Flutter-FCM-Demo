@@ -14,11 +14,12 @@ How to implement firebase in you project:
    
    `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey             storepass android -keypass android`
 
-   or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1      Key
+   or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
 
 3. In android/app -> 
    add 
    `google-service.json`
+   
 4. In `pubspec.yaml`
 
    add,
@@ -26,7 +27,7 @@ How to implement firebase in you project:
       flutter_test:
         sdk: flutter
       firebase_messaging: ^6.0.13
-      firebase_analytics: ^5.0.11
+      firebase_analytics: ^5.0.11 #optional
     ```
 
 
@@ -55,21 +56,24 @@ How to implement firebase in you project:
    }
    ```
 
-   if error -> replace
+   if error occurred, replace ` GeneratedPluginRegistrant.registerWith(registry); ` 
    
+  with,
+  
     ```override fun registerWith(registry: PluginRegistry?) {
         registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
     }```
-6. In src/main/manifest.
-
-   add,
+6. In src/main/manifest, in `<application/>` tag
    
-   In <application/> tag  
+   replace/add,
+   
     ```<application
         android:name=".Application"
     ```
 
-   In <activity/> tag (below existing intent filter tag)     
+   In `<activity/>` tag (below existing intent filter tag)
+   
+   add,
      ```
       <activity        
          <intent-filter>
@@ -108,8 +112,7 @@ How to implement firebase in you project:
       } 
      ```
 
-10. Invalidate cache and restart android studio
-11. run the application
-12. enjoy.
+10. run flutter clean/ re-install app/ invalidate cache and restart android studio 
+11. enjoy.
 
 For more help Read official documentation [Here](https://pub.dev/packages/firebase_messaging)
