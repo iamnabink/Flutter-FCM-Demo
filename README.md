@@ -61,9 +61,8 @@ How to implement firebase in you project:
    
   with,
   
-    ```override fun registerWith(registry: PluginRegistry?) {
-        registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");
-    }```
+  `registry?.registrarFor("io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin");`
+        
 6. In src/main/manifest, in `<application/>` tag
    
    replace/add,
