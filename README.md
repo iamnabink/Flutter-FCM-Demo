@@ -18,7 +18,8 @@ How to implement firebase in you project:
 
 3. In android/app -> 
    add 
-   `google-service.json`
+   `google-service.json` 
+  (Get this file from firebase console -To get this file register your app in firebase console [here](https://console.firebase.google.com))
    
 4. In `pubspec.yaml`
 
