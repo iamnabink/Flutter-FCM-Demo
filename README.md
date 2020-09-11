@@ -1,6 +1,6 @@
 # flutter notification
 
-A demo Flutter application for Firebase Cloud Messaging 
+A demo Flutter application for Firebase Cloud Messaging (Firebse push notification0
 
 ## Getting Started
 
