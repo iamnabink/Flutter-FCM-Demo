@@ -14,7 +14,7 @@ How to implement firebase in you project:
    
    `keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey             storepass android -keypass android`
 
-   or check [this](https://stackoverflow.com/a/54342861/12030116) answer for easier way to get SH1 Key
+   or check [this](https://stackoverflow.com/q/51845559/12030116) post for other easier way to get SH1 Key
 
 3. In android/app -> 
    add 
