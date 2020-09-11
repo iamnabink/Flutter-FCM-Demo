@@ -72,7 +72,7 @@ How to implement firebase in you project:
         android:name=".Application"
     ```
 
-   In `<activity/>` tag (below existing intent filter tag)
+   Inside `<activity/>` tag (below existing intent filter tag)
    
    add,
      ```
